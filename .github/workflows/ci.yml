@@ -25,5 +25,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: main
+          files: ubuntu.list
           commit-message: '[skip ci] Automatic update of ubuntu.list'
           rebase: 'true' # pull and rebase before commit
