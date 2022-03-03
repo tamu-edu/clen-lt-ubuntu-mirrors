@@ -24,9 +24,12 @@ jobs:
           apt-mirror-updater -l > ubuntu.list
           cat ubuntu.list
       - name: Commit files
-        uses: github-actions-x/commit@v2.8
+      - run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "[skip ci] Automatic update of ubuntu.list" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: main
-          files: ubuntu.list
-          commit-message: '[skip ci] Automatic update of ubuntu.list'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
