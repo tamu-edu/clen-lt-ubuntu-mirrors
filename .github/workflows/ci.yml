@@ -16,10 +16,10 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-      - name: Install apt-mirror-updator
-        run: pip install apt-mirror-updator
+      - name: Install apt-mirror-updater
+        run: pip install apt-mirror-updater
       - name: Update Mirror List
-        run: apt-mirror-updator -l > ubuntu.list
+        run: apt-mirror-updater -l > ubuntu.list
       - name: Commit files
         uses: github-actions-x/commit@v2.8
         with:
