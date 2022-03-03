@@ -21,7 +21,7 @@ jobs:
       - name: Update Mirror List
         run: |
           cat ubuntu.list
-          apt-mirror-updater -l > ubuntu.list
+          apt-mirror-updater -l -m 20 > ubuntu.list
           cat ubuntu.list
       - name: Commit files
         run: |
