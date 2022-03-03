@@ -19,7 +19,10 @@ jobs:
       - name: Install apt-mirror-updater
         run: pip install apt-mirror-updater
       - name: Update Mirror List
-        run: apt-mirror-updater -l > ubuntu.list
+        run: |
+          cat ubuntu.list
+          apt-mirror-updater -l > ubuntu.list
+          cat ubuntu.list
       - name: Commit files
         uses: github-actions-x/commit@v2.8
         with:
