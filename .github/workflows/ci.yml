@@ -24,6 +24,6 @@ jobs:
         uses: github-actions-x/commit@v2.8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: master
-          commit-message: 'Automatic update of ubuntu.list'
+          push-branch: main
+          commit-message: '[skip ci] Automatic update of ubuntu.list'
           rebase: 'true' # pull and rebase before commit
