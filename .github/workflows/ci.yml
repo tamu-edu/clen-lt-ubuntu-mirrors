@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * 1'
 
 jobs:
   update_mirrors:
@@ -17,12 +17,11 @@ jobs:
         with:
           python-version: '3.8'
       - name: Install apt-mirror-updater
-        run: pip install apt-mirror-updater
+        run: pip install -r requirements.txt
       - name: Update Mirror List
         run: |
-          cat ubuntu.list
           apt-mirror-updater -l -m 20 > ubuntu.list
-          cat ubuntu.list
+          python update-mirrors.py > ubuntu-sorted.list
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
