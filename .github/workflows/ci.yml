@@ -19,6 +19,7 @@ jobs:
       - name: Install apt-mirror-updater
         run: pip install -r requirements.txt
       - name: Update Mirror List
+        timeout-minutes: 30
         run: |
           apt-mirror-updater -l -m 20 > ubuntu-oldsorted.list
           python update-mirrors.py > ubuntu.list
@@ -26,8 +27,7 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -A
-          git commit -m "[skip ci] Automatic update of ubuntu.list"
+          git commit -m "[skip ci] Automatic update of ubuntu.list" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:

@@ -31,7 +31,7 @@ def average(lst):
 
 def update_latency(mirror: AptMirror):
   try:
-    latency = requests.get(mirror.uri).elapsed.microseconds
+    latency = requests.get(mirror.uri, timeout=20).elapsed.microseconds
     mirror.latency = latency / 1000
   except:
     mirror.latency = -1
