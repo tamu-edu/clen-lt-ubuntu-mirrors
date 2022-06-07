@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 http://mirrors.advancedhosters.com/ubuntu
 http://mirror.siena.edu/ubuntu
 http://mirror.pit.teraswitch.com/ubuntu
@@ -17,3 +18,16 @@ http://mirror.team-cymru.com/ubuntu
 http://babylon.cs.uh.edu/mirror-sites/ubuntu
 http://mirror.enzu.com/ubuntu
 https://mirrors.xtom.com/ubuntu
+=======
+http://mirror.pit.teraswitch.com/ubuntu/
+http://mirror.genesisadaptive.com/ubuntu/
+http://mirror.math.princeton.edu/pub/ubuntu/
+http://mirror.enzu.com/ubuntu/
+http://mirror.umd.edu/ubuntu/
+http://ubuntu.mirror.constant.com/
+https://nyc.mirrors.clouvider.net/ubuntu/
+http://mirrors.rit.edu/ubuntu/
+http://mirror.brightridge.com/ubuntuarchive/
+https://mirror.us.leaseweb.net/ubuntu/
+https://mirrors.bloomu.edu/ubuntu/
+>>>>>>> 65c6031590912fb775fc8223a754f36ccfcf4de4
