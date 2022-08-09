@@ -58,6 +58,14 @@ def parse_speed(speedStr):
       speed = speed * 1000
   return speed
 
+def read_ignore_list():
+  ignore_mirrors = []
+  with open('ignore_mirrors.txt') as f:
+    for line in f:
+      ignore_mirrors.append(line)
+  return ignore_mirrors
+
+ignore_mirrors = read_ignore_list()
 html = requests.get('https://launchpad.net/ubuntu/+archivemirrors')
 parsed_html = BeautifulSoup(html.text, "lxml")
 table = parsed_html.find('table', { 'id': 'mirrors_list' })
@@ -80,7 +88,7 @@ for row in table_rows:
       if a.text == "https" or a.text == "http":
         url = a['href']
         break
-    if url != '':
+    if url != '' and not url in ignore_mirrors:
       mirror = AptMirror(country=current_country, uri=url, speed=parse_speed(speed))
       update_latency(mirror)
       mirrors.append(mirror)
