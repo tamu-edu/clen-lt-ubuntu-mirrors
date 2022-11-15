@@ -1,1 +1,2 @@
 http://mirror.math.princeton.edu/pub/ubuntu/
+http://mirrors.codec-cluster.org/ubuntu/
