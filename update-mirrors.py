@@ -62,7 +62,7 @@ def read_ignore_list():
   ignore_mirrors = []
   with open('ignore_mirrors.txt') as f:
     for line in f:
-      ignore_mirrors.append(line)
+      ignore_mirrors.append(line.strip())
   return ignore_mirrors
 
 ignore_mirrors = read_ignore_list()
