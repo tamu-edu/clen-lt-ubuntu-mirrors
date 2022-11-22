@@ -22,7 +22,7 @@ jobs:
         timeout-minutes: 30
         run: |
           apt-mirror-updater -l -m 20 > ubuntu-oldsorted.list
-          python update-mirrors.py > ubuntu.list
+          python update-mirrors.py > ubuntu-sorted.list
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
